@@ -28,11 +28,11 @@ public class JeuDeCartes {
 	public String affichageJeuDeCartes() {
 		StringBuilder text = new StringBuilder();
 		for (int i = 0; i<typeDeCartes.length; i++) {
-			text.append(typeDeCartes[0].nbExemplaires).append(" ").append(typeDeCartes[i].getCarte().toString()).append("\n");
+			text.append(typeDeCartes[i].nbExemplaires).append(" ").append(typeDeCartes[i].getCarte().toString()).append("\n");
 		}
 		return text.toString();
 	}
-	
+		
 	public Carte[] donnerCartes() {
 		int total = 0;
 		for (Configuration config : typeDeCartes) {
