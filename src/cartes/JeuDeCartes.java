@@ -28,9 +28,23 @@ public class JeuDeCartes {
 	public String affichageJeuDeCartes() {
 		StringBuilder text = new StringBuilder();
 		for (int i = 0; i<typeDeCartes.length; i++) {
-			text.append(typeDeCartes[0].nbExemplaires).append(" ").append(typeDeCartes[i].toString());
+			text.append(typeDeCartes[0].nbExemplaires).append(" ").append(typeDeCartes[i].getCarte().toString()).append("\n");
 		}
 		return text.toString();
+	}
+	
+	public Carte[] donnerCartes() {
+		int total = 0;
+		for (Configuration config : typeDeCartes) {
+			total += config.getNbExemplaires();
+		}
+		Carte[] jeu = new Carte[total];
+		for (Configuration config : typeDeCartes) {
+			for(int i=0; i<jeu.length; i++) {
+				jeu[i++] = config.carte;
+			}
+		}
+		return jeu;
 	}
 	
 	private class Configuration extends Carte {
