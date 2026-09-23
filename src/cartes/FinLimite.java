@@ -1,13 +1,13 @@
 package cartes;
 
-public class DebutLimite extends Limite {
+public class FinLimite extends Limite {
 
-	public DebutLimite() {
+	public FinLimite() {
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		return "Début limite";
+		return "Fin limite";
 	}
 }

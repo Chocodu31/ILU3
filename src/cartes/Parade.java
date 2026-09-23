@@ -6,4 +6,8 @@ public class Parade extends Bataille {
 		super(type);
 	}
 
+	@Override
+	public String toString() {
+		return getType().getParade();
+	}
 }
