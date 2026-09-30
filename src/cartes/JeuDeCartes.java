@@ -49,6 +49,21 @@ public class JeuDeCartes {
 		return jeu;
 	}
 	
+	public Boolean checkCount() {
+		Carte[] tabCarte = donnerCartes();
+		int total;
+		for(Configuration config : typesDeCartes) {
+			total = 0;
+			for(Carte carte : tabCarte) {
+				if(config.getCarte().toString().equals(carte.toString())) total++;
+			}
+			if (config.getNbExemplaires()!=total) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	private class Configuration extends Carte {
 		private int nbExemplaires;
 		private Carte carte;
